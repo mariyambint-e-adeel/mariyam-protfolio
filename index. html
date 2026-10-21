@@ -1,0 +1,790 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The personal portfolio of Mariyam Bint-e-Adeel, an English Literature and Linguistics undergraduate specializing in Digital Humanities.">
+  <title>Mariyam Bint-e-Adeel | Portfolio</title>
+
+  <style>
+    :root {
+      --maroon: #70152d;
+      --deep-red: #a51d36;
+      --red: #d13b4c;
+      --black: #100d0f;
+      --dark: #1d171a;
+      --white: #fffaf7;
+      --gold: #d5b16a;
+      --muted: #c9bdc0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    /* Navigation */
+
+    header {
+      background: rgba(16, 13, 15, 0.96);
+      border-bottom: 1px solid #43232c;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav {
+      min-height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      color: var(--gold);
+      font-size: 1.25rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      font-family: Arial, sans-serif;
+      font-size: 0.88rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    /* Hero */
+
+    .hero {
+      min-height: 86vh;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(ellipse at 85% 35%,
+          #64152a 0%, transparent 48%),
+        linear-gradient(135deg, #100d0f, #251017);
+      border-bottom: 1px solid #43232c;
+      padding: 90px 0;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font: 0.78rem Arial, sans-serif;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 7vw, 5.7rem);
+      line-height: 1.08;
+      max-width: 850px;
+      margin-bottom: 24px;
+    }
+
+    h1 span {
+      color: var(--gold);
+    }
+
+    .hero p {
+      color: var(--muted);
+      font: 1.05rem/1.9 Arial, sans-serif;
+      max-width: 640px;
+      margin-bottom: 32px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 23px;
+      border: 1px solid var(--gold);
+      font: 0.9rem Arial, sans-serif;
+      transition: 0.25s;
+    }
+
+    .btn.primary {
+      background: var(--maroon);
+      border-color: var(--maroon);
+    }
+
+    .btn:hover {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    /* General sections */
+
+    section {
+      padding: 85px 0;
+      scroll-margin-top: 75px;
+    }
+
+    .section-label {
+      color: var(--red);
+      text-transform: uppercase;
+      font: 0.78rem Arial, sans-serif;
+      letter-spacing: 3px;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      margin-bottom: 25px;
+      line-height: 1.2;
+    }
+
+    .intro {
+      color: var(--muted);
+      font: 1rem/1.9 Arial, sans-serif;
+      max-width: 760px;
+    }
+
+    /* About */
+
+    .about {
+      background: var(--white);
+      color: var(--black);
+    }
+
+    .about .intro {
+      color: #51474a;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 45px;
+      align-items: start;
+    }
+
+    .info-card {
+      background: #f1e6e4;
+      padding: 25px;
+      border-left: 4px solid var(--maroon);
+    }
+
+    .info-card h3 {
+      margin-bottom: 12px;
+      color: var(--maroon);
+    }
+
+    .info-card p {
+      font: 0.95rem/1.8 Arial, sans-serif;
+    }
+
+    /* Expertise */
+
+    .expertise {
+      background: var(--dark);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 35px;
+    }
+
+    .card {
+      background: #251c20;
+      border: 1px solid #4b2a34;
+      padding: 27px;
+      transition: transform 0.25s, border-color 0.25s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold);
+    }
+
+    .card .number {
+      color: var(--gold);
+      font-size: 1.7rem;
+      margin-bottom: 14px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 1.25rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      font: 0.9rem/1.8 Arial, sans-serif;
+    }
+
+    /* Experience */
+
+    .experience {
+      background: #160f12;
+    }
+
+    .timeline {
+      margin-top: 35px;
+      border-left: 2px solid var(--maroon);
+      padding-left: 28px;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 0 0 32px;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      width: 11px;
+      height: 11px;
+      background: var(--gold);
+      border-radius: 50%;
+      left: -35px;
+      top: 9px;
+    }
+
+    .timeline-item h3 {
+      font-size: 1.25rem;
+      margin-bottom: 5px;
+    }
+
+    .timeline-item .role {
+      color: var(--gold);
+      font: 0.9rem Arial, sans-serif;
+      margin-bottom: 8px;
+    }
+
+    .timeline-item p {
+      color: var(--muted);
+      font: 0.93rem/1.8 Arial, sans-serif;
+    }
+
+    /* Education */
+
+    .education {
+      background: var(--maroon);
+    }
+
+    .education .section-label {
+      color: #f2d79e;
+    }
+
+    .education-box {
+      border: 1px solid #c47786;
+      padding: 30px;
+      margin-top: 25px;
+      max-width: 760px;
+    }
+
+    .education-box p {
+      font: 0.95rem/1.9 Arial, sans-serif;
+      color: #f5e6e8;
+    }
+
+    /* Project */
+
+    .projects {
+      background: var(--white);
+      color: var(--black);
+    }
+
+    .projects .intro {
+      color: #51474a;
+    }
+
+    .project-card {
+      margin-top: 30px;
+      background: #1a1216;
+      color: var(--white);
+      border: 1px solid var(--gold);
+      padding: clamp(25px, 5vw, 45px);
+      max-width: 820px;
+    }
+
+    .project-card .tag {
+      display: inline-block;
+      color: var(--gold);
+      border: 1px solid #76532b;
+      padding: 5px 11px;
+      font: 0.75rem Arial, sans-serif;
+      margin-bottom: 18px;
+    }
+
+    .project-card h3 {
+      font-size: clamp(1.7rem, 4vw, 2.5rem);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      font: 0.95rem/1.8 Arial, sans-serif;
+      margin-bottom: 25px;
+    }
+
+    /* Skills */
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .skill {
+      border: 1px solid #67404b;
+      background: #25171d;
+      color: #f5e9ec;
+      padding: 9px 15px;
+      font: 0.85rem Arial, sans-serif;
+    }
+
+    /* Contact */
+
+    .contact {
+      text-align: center;
+      background:
+        radial-gradient(ellipse at center, #4c1023, #100d0f 70%);
+    }
+
+    .contact .intro {
+      margin: 0 auto 30px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 15px;
+      border-top: 1px solid #43232c;
+      color: var(--muted);
+      font: 0.8rem Arial, sans-serif;
+    }
+
+    footer span {
+      color: var(--gold);
+    }
+
+    @media (max-width: 760px) {
+      nav {
+        padding: 17px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        gap: 14px;
+      }
+
+      .hero {
+        min-height: 75vh;
+        padding: 65px 0;
+      }
+
+      .about-grid,
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="container">
+      <a class="logo" href="#home">MBA.</a>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="eyebrow">Writer · Researcher · Digital Humanist</div>
+
+        <h1>
+          Mariyam<br>
+          Bint-e-Adeel<span>.</span>
+        </h1>
+
+        <p>
+          Exploring the intersection of language, literature,
+          culture, and technology. I am a final-year undergraduate
+          student of English Literature and Linguistics at NUML,
+          specializing in Digital Humanities.
+        </p>
+
+        <div class="buttons">
+          <a class="btn primary" href="#projects">Explore My Work</a>
+          <a class="btn" href="#about">Discover My Story</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container about-grid">
+        <div>
+          <div class="section-label">A Little About Me</div>
+          <h2>Language, stories & ideas.</h2>
+
+          <p class="intro">
+            I am an English Literature and Linguistics undergraduate
+            with an interest in creative writing, academic research,
+            content development, and the evolving relationship
+            between the humanities and digital technologies.
+
+            <br><br>
+
+            My academic journey brings together literary analysis,
+            linguistic inquiry, and Digital Humanities. Beyond
+            academics, I have explored teaching, content writing,
+            community engagement, event promotion, and development
+            initiatives.
+
+            <br><br>
+
+            I believe that words can communicate ideas, preserve
+            experiences, and create meaningful connections.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>My Focus</h3>
+          <p>
+            English Literature & Linguistics<br>
+            Digital Humanities<br>
+            Academic & Literary Research<br>
+            Creative & Content Writing<br>
+            Teaching & Communication<br>
+            Community Engagement
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="expertise" id="expertise">
+      <div class="container">
+        <div class="section-label">What I Do</div>
+        <h2>Areas of Interest</h2>
+
+        <p class="intro">
+          My work combines a passion for language with research,
+          communication, creativity, and digital exploration.
+        </p>
+
+        <div class="card-grid">
+          <article class="card">
+            <div class="number">01</div>
+            <h3>Writing & Editing</h3>
+            <p>
+              Creating written content, refining language,
+              proofreading, and communicating ideas clearly
+              for different audiences.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="number">02</div>
+            <h3>Literary Research</h3>
+            <p>
+              Exploring literary texts, cultural narratives,
+              critical perspectives, and the relationship
+              between literature and society.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="number">03</div>
+            <h3>Digital Humanities</h3>
+            <p>
+              Exploring how digital approaches can support
+              the study of literature, language, representation,
+              and cultural texts.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="number">04</div>
+            <h3>Teaching & Learning</h3>
+            <p>
+              Supporting English language learning through
+              grammar, vocabulary, reading, writing,
+              and communication skills.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="number">05</div>
+            <h3>Communication & Marketing</h3>
+            <p>
+              Contributing to promotional activities,
+              event communication, teamwork, and
+              audience engagement.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="number">06</div>
+            <h3>Community Engagement</h3>
+            <p>
+              Participating in initiatives focused on
+              education, empowerment, volunteering,
+              and meaningful social impact.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="experience" id="experience">
+      <div class="container">
+        <div class="section-label">My Journey</div>
+        <h2>Experience & Involvement</h2>
+
+        <p class="intro">
+          A selection of professional, academic, and
+          community experiences that have shaped my growth.
+        </p>
+
+        <div class="timeline">
+
+          <article class="timeline-item">
+            <h3>Projects Monitoring & Evaluation Wing</h3>
+            <div class="role">
+              Intern · Ministry of Planning, Development
+              & Special Initiatives
+            </div>
+            <p>
+              Gained exposure to data compilation, official
+              documentation, and monitoring frameworks during
+              a six-week summer internship.
+            </p>
+          </article>
+
+          <article class="timeline-item">
+            <h3>TEDxNUML</h3>
+            <div class="role">Marketing & Promotions Team</div>
+            <p>
+              Contributed to promotional activities and
+              collaborative event work, developing communication,
+              teamwork, and coordination skills.
+            </p>
+          </article>
+
+          <article class="timeline-item">
+            <h3>Millennium Fellowship</h3>
+            <div class="role">
+              Fellowship Project · Enlighten – Empower: Bloom Together
+            </div>
+            <p>
+              Participated in a social-impact project focused
+              on knowledge, empowerment, and positive community
+              engagement, recognized by the United Nations
+              Academic Impact and Millennium Campus Network.
+            </p>
+          </article>
+
+          <article class="timeline-item">
+            <h3>Alkhidmat Foundation Pakistan</h3>
+            <div class="role">Internship & Community Service</div>
+            <p>
+              Gained experience in a community-focused
+              organization and developed a deeper appreciation
+              for service, collaboration, and social responsibility.
+            </p>
+          </article>
+
+          <article class="timeline-item">
+            <h3>Content Writing & English Teaching</h3>
+            <div class="role">
+              Writing · Research · Proofreading · Teaching
+            </div>
+            <p>
+              Experience across educational and editorial work,
+              including English language teaching, written
+              content development, research, and proofreading.
+            </p>
+          </article>
+
+          <article class="timeline-item">
+            <h3>Pakistan National Council of the Arts</h3>
+            <div class="role">Publications & Research Internship</div>
+            <p>
+              Explored publications documentation, research
+              resources, arts archives, and Pakistani visual
+              art and literature.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="education" id="education">
+      <div class="container">
+        <div class="section-label">Academic Background</div>
+        <h2>Education</h2>
+
+        <div class="education-box">
+          <h3>
+            BS English Literature and Linguistics
+          </h3>
+
+          <p>
+            National University of Modern Languages (NUML)<br>
+            Islamabad, Pakistan<br>
+            Final-Year Undergraduate Student<br>
+            Specialization: Digital Humanities
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects" id="projects">
+      <div class="container">
+        <div class="section-label">Selected Work</div>
+        <h2>Projects & Creativity</h2>
+
+        <p class="intro">
+          A space for creative work, storytelling, and
+          projects that bring ideas to life.
+        </p>
+
+        <article class="project-card">
+          <span class="tag">Creative Writing · Digital Project</span>
+
+          <h3>The Shadows Beyond Blackwood</h3>
+
+          <p>
+            A creative project that reflects my interest
+            in storytelling and imaginative literary worlds.
+            Explore the project to experience the work itself.
+          </p>
+
+          <a
+            class="btn primary"
+            href="https://mariyambint-e-adeel.neocities.org/_THE%20SHADOWS%20BEYOND%20BLACKWOOD_"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Visit Project ↗
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <section class="expertise" id="skills">
+      <div class="container">
+        <div class="section-label">My Toolkit</div>
+        <h2>Skills & Keywords</h2>
+
+        <p class="intro">
+          Areas that reflect my academic interests and
+          professional experience.
+        </p>
+
+        <div class="skills">
+          <span class="skill">English Literature</span>
+          <span class="skill">Linguistics</span>
+          <span class="skill">Digital Humanities</span>
+          <span class="skill">Academic Research</span>
+          <span class="skill">Content Writing</span>
+          <span class="skill">Creative Writing</span>
+          <span class="skill">Editing & Proofreading</span>
+          <span class="skill">Literary Criticism</span>
+          <span class="skill">Teaching</span>
+          <span class="skill">Communication</span>
+          <span class="skill">Teamwork</span>
+          <span class="skill">Leadership</span>
+          <span class="skill">Event Promotion</span>
+          <span class="skill">Documentation</span>
+          <span class="skill">Digital Research</span>
+          <span class="skill">Community Engagement</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="section-label">Let's Connect</div>
+        <h2>Every good idea begins somewhere.</h2>
+
+        <p class="intro">
+          For professional opportunities, academic
+          collaborations, writing projects, or meaningful
+          conversations, feel free to reach out.
+        </p>
+
+        <div class="buttons" style="justify-content:center">
+          <a
+            class="btn primary"
+            href="mailto:binteadeel232006@gmail.com"
+          >
+            Email Me
+          </a>
+
+          <a
+            class="btn"
+            href="https://www.linkedin.com/in/mariyam-bint-e-adeel?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Connect on LinkedIn
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>
+      © 2026 <span>Mariyam Bint-e-Adeel</span>.
+      Built around words, ideas, and possibilities.
+    </p>
+  </footer>
+
+</body>
+</html>
